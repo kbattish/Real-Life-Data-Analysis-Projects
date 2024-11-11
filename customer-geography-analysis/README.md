@@ -1,34 +1,62 @@
 # Customer Geography Analysis
 
-## Overview
-This project analyzes customer spending patterns across different UK cities for ProWidget Systems, a UK-based B2B retailer. The analysis focuses on:
-- Identifying underserved UK cities
-- Analyzing whether customers are primarily London-based
-- Comparing spending patterns between London and other UK cities
+## Problem Statement
+
+We aim to gain insights into our customer base by analyzing their addresses and total spending. This investigation will help us:
+
+* Identify potential underserved cities with low spending, indicating growth opportunities.
+* Determine if our customer base is primarily concentrated in London or spread across other regions.
+
+## Goals
+
+The analysis will achieve the following:
+
+* Calculate total customer spend per city.
+* Compare London's spending to the rest of the UK.
+* Identify potential data issues and cleaning methods.
 
 ## Data
-- `addresses.csv`: Customer address data with spending information
-- `cities.csv`: Reference data for UK cities
 
-## Analysis
-The analysis is performed in the Jupyter notebook `customer_geography_analysis.ipynb` and includes:
-- Data cleaning and preprocessing
-- City extraction from address data
-- Spending analysis by city
-- London vs Rest of UK comparison
+The analysis utilizes a provided dataset containing:
 
-## Tools Used
-- Python 3.x
-- Pandas
-- Matplotlib
-- Jupyter Notebook
+* Customer address
+* Total spending
 
-## Key Findings
-- London generates nearly as much revenue as all other major cities combined
-- Significant portion of customers are based outside major cities
-- [Add more key findings...]
+## Methodology
 
-## Future Work
-- Incorporate postcode analysis
-- Add demographic data
-- Consider using geocoding services
+1. **Data Exploration:**
+    * Explore the customer address data to understand its format and identify missing values.
+
+2. **City Extraction:**
+    * Develop a method to extract the city name from the address field. This might involve:
+        * Applying rules based on address length.
+        * Using a predefined list of cities for comparison.
+        * Extracting postcodes for cross-referencing with a national database (subject to permission).
+
+3. **Data Cleaning:**
+    * Address missing addresses (drop or categorize) and identify any unusual spending values.
+
+4. **Customer Spend Analysis:**
+    * Calculate the total customer spend for each city.
+    * Compare the total spend in London to the rest of the UK, considering both all cities and excluding the "Other" category.
+
+5. **Visualization:**
+    * Create a bar chart to visualize the top 20 spending cities.
+
+## Results
+
+* A significant portion of addresses fall under the "Other" category, indicating limitations in the city extraction method.
+* London exhibits the highest total customer spend compared to other large cities.
+* Spending patterns don't necessarily correlate with population size (e.g., Leeds).
+
+## Conclusion
+
+Our customer base leans towards London, with a high concentration of spending in Manchester, Birmingham, and Glasgow. While these cities boast high populations, spending seems to vary, suggesting further investigation into customer demographics and marketing strategies. 
+
+**Further Considerations:**
+
+* Refining the city extraction method to capture more addresses.
+* Exploring spending patterns by customer segments beyond city location.
+* Analyzing customer acquisition channels for different regions.
+
+This analysis paves the way for further exploration of customer geography and its impact on spending habits. By delving deeper into this data, we can make informed decisions about resource allocation and marketing strategies to reach a wider customer base across the UK.
