@@ -2,7 +2,8 @@
 
 Welcome to the **Real-Life Data Analysis Projects** repository! This collection is designed to provide data analysts with practical examples of common, real-world data analysis problems and solutions. Each project in this repository tackles a different analysis scenario, offering guidance and techniques that can be applied in similar situations.
 
-![Pepe Silvia Meme Banner](https://www.google.com/url?sa=i&url=https%3A%2F%2Fknowyourmeme.com%2Fmemes%2Fpepe-silvia&psig=AOvVaw33Y3owAUr73cLd6aZwg02j&ust=1731383827490000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOidpLKx04kDFQAAAAAdAAAAABAW)
+![pepe_silvia_meme_banner](https://github.com/user-attachments/assets/275e1347-c0c5-4f66-b5e2-f6db57f3fb0b)
+
 
 ## Why This Repository?
 
