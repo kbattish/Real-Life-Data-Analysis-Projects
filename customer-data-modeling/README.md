@@ -1,51 +1,74 @@
-# Customer Data Consolidation and Deduplication
+# E-commerce Customer Profiling and Data Consolidation Project
 
-**Problem Statement**
+## Problem Statement
+An e-commerce startup, following a successful first month, seeks to better understand its customer base and purchasing behaviors. The primary challenges are:
+- Identifying and profiling customers across disparate data sources:
+  - **Customer database**: Records online account sign-ups.
+  - **CRM system**: Tracks phone and non-online customer interactions.
+  - **Raw transaction data**: Includes guest purchases without formal customer records.
+- Addressing overlapping entries and duplicates caused by customers interacting with multiple systems.
 
-Ebuy Emporium, a new e-commerce startup, is facing challenges in accurately counting its customer base due to multiple data sources and potential duplicates. The goal is to consolidate customer information from various sources (e-commerce platform, CRM system, and raw transaction data) into a unified and deduplicated dataset.
+This project aims to integrate, clean, and analyze customer data to enable actionable insights into customer demographics and purchasing patterns.
 
-**Data Sources**
+---
 
-1. **E-commerce Platform:** Contains customer details for registered accounts.
-2. **CRM System:** Stores customer information for phone and in-store purchases.
-3. **Raw Transaction Data:** Includes purchase details, including guest purchases.
+## Goals
+1. **Data Consolidation**  
+   Integrate customer information across all data sources into a unified dataset.
 
-**Data Model**
+2. **Data Deduplication**  
+   Identify and resolve duplicate records using exact and fuzzy matching techniques.
 
-The final data model will include the following columns:
+3. **Customer Identification**  
+   Create a flexible data model to uniquely identify and profile each customer.
 
-* `customer_id`: Unique identifier for each customer.
-* `first_name`: Customer's first name.
-* `surname`: Customer's surname.
-* `postcode`: Customer's postal code.
-* `age`: Customer's age (if available).
-* `is_guest`: Indicates whether the customer made a guest purchase.
-* `in_purchase_data`: Indicates whether the customer is present in the purchase data.
-* `in_crm_data`: Indicates whether the customer is present in the CRM data.
-* `in_customer_data`: Indicates whether the customer is present in the e-commerce platform's customer database.
+4. **Data Validation**  
+   Ensure data completeness and reliability by identifying inconsistencies.
 
-**Methodology**
+5. **Solution Documentation**  
+   Provide a well-documented schema to support future demographic and behavioral analysis.
 
-1. **Data Exploration:**
-   * Analyze each dataset to understand its structure, missing values, and data quality.
-   * Identify potential data inconsistencies and anomalies.
-2. **Data Cleaning:**
-   * Handle missing values and inconsistencies.
-   * Standardize data formats (e.g., date formats, text casing).
-3. **Data Transformation:**
-   * Extract relevant customer information from each dataset.
-   * Create a common schema for all datasets.
-   * Combine datasets based on customer IDs and fuzzy matching techniques.
-4. **Deduplication:**
-   * Identify and remove duplicate records using various techniques (e.g., exact matching, fuzzy matching).
-   * Consider factors like name similarity, address similarity, and purchase history.
-5. **Data Model Creation:**
-   * Construct the final data model based on the deduplicated and combined data.
-   * Ensure data integrity and consistency.
+---
 
-**Tools and Techniques**
+## Methodology
 
-* **Python:** For data manipulation and analysis.
-* **Pandas:** For data structures and analysis.
-* **NumPy:** For numerical operations.
-* **Recordlinkage:** For entity resolution and fuzzy matching.
+### 1. Data Exploration
+- Analyzed datasets for inconsistencies, missing values, and data overlaps.
+- Created columns to identify guest checkouts and verified data source integrity.
+
+### 2. Data Cleaning
+- Standardized string columns (e.g., names and postcodes).
+- Validated unique customer IDs and resolved duplicates.
+
+### 3. Data Integration
+- Merged datasets (Purchases, CRM, Customer Database) while maintaining lineage for each record.
+- Identified customer overlaps using both exact and fuzzy matching techniques.
+
+### 4. Deduplication
+- Employed fuzzy matching for similar entries (e.g., typos in names).
+- Merged duplicate customer IDs into main records for accurate profiling.
+
+### 5. Final Schema
+- Created a unified dataset with columns: `customer_id`, `first_name`, `surname`, `postcode`, `age`, `is_guest`, `in_purchase_data`, `in_crm_data`, `in_customer_data`, and deduplication metadata.
+
+---
+
+## Results
+- **Unified Dataset**: Integrated 35,395 records across all sources.
+- **Unique Customers**: Identified 27,395 unique/main customer records.
+- **Guest Checkouts**: Represented ~25% of purchase data.
+- **Fuzzy Matching Success**: Enabled linkage of ~7,148 additional records based on name, surname, and postcode similarity.
+
+---
+
+## Challenges and Key Insights
+- **Data Overlap**: ~2,134 customers existed only in CRM or customer databases without purchase history.
+- **Fuzzy Matching Success**: Improved deduplication for records with minor discrepancies (e.g., typos or formatting).
+- **Guest Behavior**: Guests constituted a significant portion of transactions, emphasizing the need for conversion strategies.
+
+---
+
+## Future Considerations
+1. **Enhance Fuzzy Matching**: Explore advanced ML techniques for improved record linkage.
+2. **Customer Behavior Segmentation**: Use the unified dataset to analyze purchasing trends and demographics.
+3. **Marketing Insights**: Tailor campaigns based on consolidated profiles and spending habits.
