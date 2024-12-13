@@ -22,6 +22,13 @@ Whether you’re a beginner or a seasoned data analyst, these projects aim to:
    - **Objective**: Understand the sales distribution by region and identify areas with the most significant growth potential.
    - **Approach**: Through data visualization and statistical analysis, this project breaks down sales performance by region and provides insights into regional preferences and growth opportunities.
 
+### 2. E-commerce Customer Profiling and Data Consolidation - [View Project](./customer-data-modeling)
+   - **Description**: This project consolidates and deduplicates customer data from multiple sources (CRM, customer database, and purchase data) to create a unified dataset for actionable insights.
+   - **Key Skills**: Data integration, data deduplication, fuzzy matching, exploratory data analysis (EDA)
+   - **Objective**: Build a unified customer dataset, identify unique customers, and analyze purchasing behavior.
+   - **Approach**: Integrated data from disparate sources, resolved duplicates using exact and fuzzy matching techniques, and created a flexible schema to enable demographic and behavioral analysis.
+
+
 ### More Projects Coming Soon!
 This repository is a growing resource. Future projects will cover increasingly difficult problems.
 
